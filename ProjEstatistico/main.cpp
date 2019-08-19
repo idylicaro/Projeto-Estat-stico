@@ -1,24 +1,39 @@
-#include <iostream> //biblioteca de entrada e saida de dados
-#include <math.h>   //biblioteca matematica
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
 using namespace std;
 
-float KclassesCalculo(int n);
-int main()
-{
+#include "func.h"
+/* LEgenda de variaveis
+* k  - Numero de classes
+* A  - Amplitude Total
+* h  - Amplitude total classe
+* f  - Frequencia relativa da classe
+* pm - ponto medio
+* nf - Frequencia absoluta da classe
+* NF - Frequencia absoluta Acumulada da classse
+* F  - Frequencia relativa Acumulada
+*
+*/
+
+int main(void){
+    int A,k,h,f,pm,nf,NF,F;
     int tam;
     cout <<"Quantos dados deseja registrar?"<<endl;
     cin  >> tam;
-    //system("cls");
+    system("cls");
+
     int dados[tam];
-    int k = KclassesCalculo(tam)+1;  //entao como o tipo e int , ele retira tudo apos a virgula , ai adiciona 1 pq o autor do livro fala que e pra arrendondar pra cima
+    for(int i=0;i<tam;i++){
+        cout << "Digite o valor e pressione \"ENTER\"!"<<endl;
+        cin>>dados[i];
+    }
 
-
-    cout <<k;
+    k = KclassesCalculo(50)+1;  //entao como o tipo e int , ele retira tudo apos a virgula , ai adiciona 1 pq o autor do livro fala que e pra arrendondar pra cima
+    A = (maior(dados,tam))-(menor(dados,tam));
+    h = A/k;
+    cout <<" "<<h;
     return 0;
 }
-float KclassesCalculo(int n){
-    float k=0;
-    k = 1+(3.22*log10(n));
-    return k;
-}
+
 

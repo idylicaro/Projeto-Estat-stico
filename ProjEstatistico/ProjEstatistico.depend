@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1566240255 source:c:\users\alucard\documents\projeto-estatistico\projestatistico\main.cpp
+	<iostream>
+	<math.h>
+	<stdlib.h>
+	"func.h"
+
+1566239500 c:\users\alucard\documents\projeto-estatistico\projestatistico\func.h
+	<iostream>
+	<math.h>
+
