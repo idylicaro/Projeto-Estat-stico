@@ -17,7 +17,7 @@ using namespace std;
 */
 
 int main(void){
-    int A,k,h,f,pm,nf,NF,F,small,biger;
+    int A,k,h,f,nf,NF,F,small,biger;
     //float intervalos[]
     int tam;
     cout <<"Quantos dados deseja registrar?"<<endl;
@@ -33,7 +33,7 @@ int main(void){
     small = menor(dados,tam);
     biger = maior(dados,tam);
 
-    k = KclassesCalculo(50)+1;  //entao como o tipo e int , ele retira tudo apos a virgula , ai adiciona 1 pq o autor do livro fala que e pra arrendondar pra cima
+    k = KclassesCalculo(tam)+1;  //entao como o tipo e int , ele retira tudo apos a virgula , ai adiciona 1 pq o autor do livro fala que e pra arrendondar pra cima
     A = (biger)-(small);
     h = A/k;
 
@@ -43,6 +43,7 @@ int main(void){
     definindoIntervalos(small,k,h,intervalos);
 
     //ler os intervalos
+    /*
     for(int i = 0;i<k;i++){
         for(int j =0;j<2;j++){
             cout <<intervalos[i][j]<< " ";
@@ -51,9 +52,15 @@ int main(void){
         cout << "\n";
         cout << "----------------------"<<endl;
     }
+    */
+
+    float tabela[k][6];
+    calculoPMedio(tabela,intervalos,k);
+
 
 
     return 0;
 }
+
 
 

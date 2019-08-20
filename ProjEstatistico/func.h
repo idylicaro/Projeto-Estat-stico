@@ -52,3 +52,9 @@ void definindoIntervalos(int small,int k,int h,float intervalo[][2]){
     }
 
 }
+
+void calculoPMedio(float tabela[][6],float intervalos[][2],int k){
+    for(int i = 0;i<k;i++){
+            tabela[i][0]= (intervalos[i][0] + intervalos[i][1])/2;
+    }
+}
