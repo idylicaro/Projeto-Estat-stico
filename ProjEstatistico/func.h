@@ -58,3 +58,25 @@ void calculoPMedio(float tabela[][6],float intervalos[][2],int k){
             tabela[i][0]= (intervalos[i][0] + intervalos[i][1])/2;
     }
 }
+void zeraTAbela(float tabela[][6],int k){
+    for(int i=0;i<k;i++){
+        for(int g = 0;g<6;g++){
+            tabela[i][g] = 0;
+        }
+    }
+}
+void calculoFrequenciaClasse(float tabela[][6],float intervalos[][2],int k,int dados[],int tam){
+
+    for(int i = 0;i<k;i++){
+            for(int j=0;j<tam;j++){
+                //cout <<dados[j]<<endl;
+                if(dados[j]>=intervalos[i][0] && dados[j]<=intervalos[i][1] ){
+                    tabela[i][1]+=1;
+                }
+
+            }
+
+
+    }
+}
+

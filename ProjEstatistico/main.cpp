@@ -42,11 +42,11 @@ int main(void){
     float intervalos[k][2];
     definindoIntervalos(small,k,h,intervalos);
 
-    //ler os intervalos
+
     /*
     for(int i = 0;i<k;i++){
-        for(int j =0;j<2;j++){
-            cout <<intervalos[i][j]<< " ";
+        for(int j =0;j<6;j++){
+            cout <<intervalos[i][0]<< " " intervalos[i][1]<< "||" <<tabela[i][j];
 
         }
         cout << "\n";
@@ -55,10 +55,24 @@ int main(void){
     */
 
     float tabela[k][6];
+    zeraTAbela(tabela,k);
     calculoPMedio(tabela,intervalos,k);
 
+    calculoFrequenciaClasse(tabela,intervalos,k,dados,tam);
 
 
+    for(int i = 0;i<k;i++){
+            cout <<intervalos[i][0]<< " " << intervalos[i][1]<< "|-|";
+        for(int j =0;j<6;j++){
+            cout << " |-| " <<tabela[i][j];
+
+        }
+        cout << "\n";
+        cout << "----------------------"<<endl;
+    }
+
+
+    //cout << tabela[0][1]<<endl;
     return 0;
 }
 
