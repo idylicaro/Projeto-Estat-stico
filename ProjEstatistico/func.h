@@ -75,8 +75,34 @@ void calculoFrequenciaClasse(float tabela[][6],float intervalos[][2],int k,int d
                 }
 
             }
-
-
     }
 }
-
+void calculoFrequenciaClasseAcumulada(float tabela[][6],int k){
+    float soma=0;
+    for(int i = 0;i<k;i++){
+            if(i==0){
+            tabela[i][2] = tabela[i][1];
+            soma = tabela[i][1];
+            }else{
+            soma+=tabela[i][1];
+            tabela[i][2] = soma;
+            }
+    }
+}
+void calculoFrequenciaClasseRelativa(float tabela[][6],int k,int tam){
+        for(int i = 0;i<k;i++){
+            tabela[i][3] = tabela[i][1]/tam;
+    }
+}
+void calculoFrequenciaClasseRelativaAcumulada(float tabela[][6],int k){
+    float soma=0;
+    for(int i = 0;i<k;i++){
+            if(i==0){
+            tabela[i][4] = tabela[i][3];
+            soma = tabela[i][3];
+            }else{
+            soma+=tabela[i][3];
+            tabela[i][4] = soma;
+            }
+    }
+}

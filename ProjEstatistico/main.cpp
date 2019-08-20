@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <stdlib.h>
+#include <iomanip>
 using namespace std;
 
 #include "func.h"
@@ -17,7 +18,7 @@ using namespace std;
 */
 
 int main(void){
-    int A,k,h,f,nf,NF,F,small,biger;
+    int A,k,h,small,biger;
     //float intervalos[]
     int tam;
     cout <<"Quantos dados deseja registrar?"<<endl;
@@ -43,36 +44,27 @@ int main(void){
     definindoIntervalos(small,k,h,intervalos);
 
 
-    /*
-    for(int i = 0;i<k;i++){
-        for(int j =0;j<6;j++){
-            cout <<intervalos[i][0]<< " " intervalos[i][1]<< "||" <<tabela[i][j];
-
-        }
-        cout << "\n";
-        cout << "----------------------"<<endl;
-    }
-    */
-
     float tabela[k][6];
     zeraTAbela(tabela,k);
+
     calculoPMedio(tabela,intervalos,k);
-
     calculoFrequenciaClasse(tabela,intervalos,k,dados,tam);
+    calculoFrequenciaClasseAcumulada(tabela,k);
+    calculoFrequenciaClasseRelativa(tabela,k,tam);
+    calculoFrequenciaClasseRelativaAcumulada(tabela,k);
 
-
+    cout <<"INTERVALO"<<"|-|"<<"PMedio"<<"|-|"<<"F.Classe"<<"|-|"<<"F.C.Acumulada"<<"|-|"<<"F.C.Relativa"<<"|-|"<<"F.C.R.Acumulada"<<endl;
     for(int i = 0;i<k;i++){
-            cout <<intervalos[i][0]<< " " << intervalos[i][1]<< "|-|";
+            cout <<setw(7)<<intervalos[i][0]<< " " <<setw(7)<< intervalos[i][1]<<" ";
         for(int j =0;j<6;j++){
-            cout << " |-| " <<tabela[i][j];
+            cout << " || " <<setw(7)<<tabela[i][j];
 
         }
         cout << "\n";
-        cout << "----------------------"<<endl;
+        cout << "-----------------------------------------------------------------------------------------------------------------------"<<endl;
     }
 
 
-    //cout << tabela[0][1]<<endl;
     return 0;
 }
 
