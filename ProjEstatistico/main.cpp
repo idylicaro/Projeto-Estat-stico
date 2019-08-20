@@ -53,7 +53,15 @@ int main(void){
     calculoFrequenciaClasseRelativa(tabela,k,tam);
     calculoFrequenciaClasseRelativaAcumulada(tabela,k);
 
-    cout <<"INTERVALO"<<"|-|"<<"PMedio"<<"|-|"<<"F.Classe"<<"|-|"<<"F.C.Acumulada"<<"|-|"<<"F.C.Relativa"<<"|-|"<<"F.C.R.Acumulada"<<endl;
+
+    cout <<"LEGENDA:\n" <<"P.M = Ponto Medio\n"<<"F.C=Frequencia Absoluta Da Classe\n"<<"F.C.A=Frequencia Absoluta Acumulada Da Classe\n"
+         <<"F.C.R=Frequencia Relativa Da Classe\n"<<"F.C.R.A=Frequencia Relativa Acumulada Da Classe\n"<<endl;
+
+    cout <<setiosflags(ios::internal);
+    cout <<"     INTERVALO"<< setw(5)<<"||"<<setw(9) <<"P.M" <<"||" <<setw(9) <<"F.C" <<"||" <<setw(9)
+         <<"F.C.A" <<"||" <<setw(9) <<"F.C.R"<<"||" <<setw(9) <<"F.C.R.A" <<"||"<<endl;
+
+    cout << "-----------------------------------------------------------------------------------------------------------------------"<<endl;
     for(int i = 0;i<k;i++){
             cout <<setw(7)<<intervalos[i][0]<< " " <<setw(7)<< intervalos[i][1]<<" ";
         for(int j =0;j<6;j++){
