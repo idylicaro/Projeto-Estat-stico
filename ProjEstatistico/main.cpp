@@ -29,9 +29,10 @@ int main(void){
         cin>>dados[i];
     }
 
-    k = KclassesCalculo(50)+1;  //entao como o tipo e int , ele retira tudo apos a virgula , ai adiciona 1 pq o autor do livro fala que e pra arrendondar pra cima
+    k = KclassesCalculo(tam)+1;  //entao como o tipo e int , ele retira tudo apos a virgula , ai adiciona 1 pq o autor do livro fala que e pra arrendondar pra cima
     A = (maior(dados,tam))-(menor(dados,tam));
     h = A/k;
+
     cout <<" "<<h;
     return 0;
 }
