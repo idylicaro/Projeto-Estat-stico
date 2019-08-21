@@ -19,6 +19,7 @@ using namespace std;
 
 int main(void){
     int A,k,h,small,biger;
+    float media,variancia;
     //float intervalos[]
     int tam;
     cout <<"Quantos dados deseja registrar?"<<endl;
@@ -52,7 +53,9 @@ int main(void){
     calculoFrequenciaClasseAcumulada(tabela,k);
     calculoFrequenciaClasseRelativa(tabela,k,tam);
     calculoFrequenciaClasseRelativaAcumulada(tabela,k);
-
+    calculoMediaClasse(tabela,k);
+    media = calculoMediaClasseAcumulada(tabela,k,tam);
+    variancia = calculoVariancia(tabela,k,tam,media);
 
     cout <<"LEGENDA:\n" <<"P.M = Ponto Medio\n"<<"F.C=Frequencia Absoluta Da Classe\n"<<"F.C.A=Frequencia Absoluta Acumulada Da Classe\n"
          <<"F.C.R=Frequencia Relativa Da Classe\n"<<"F.C.R.A=Frequencia Relativa Acumulada Da Classe\n"<<endl;
@@ -71,6 +74,11 @@ int main(void){
         cout << "\n";
         cout << "-----------------------------------------------------------------------------------------------------------------------"<<endl;
     }
+
+    cout <<"\n Media:"<<media<<endl;
+    cout <<"\n Variancia:"<<variancia<<endl;
+    cout <<"\n Desvio Padrao"<<sqrt(variancia)<<endl;
+
     system("pause");
 
     return 0;

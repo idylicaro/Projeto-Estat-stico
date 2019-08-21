@@ -106,3 +106,26 @@ void calculoFrequenciaClasseRelativaAcumulada(float tabela[][6],int k){
             }
     }
 }
+void calculoMediaClasse(tabela[][6],int k){
+    for(int i = 0;i<k;i++){
+            tabela[i][5] = tabela[i][0]*tabela[i][1];
+    }
+}
+float calculoMediaClasseAcumulada(tabela[][6],int k,int tam){
+    float soma=0;
+    for(int i = 0;i<k;i++){
+            if(i==0){
+            soma = tabela[i][5];
+            }else{
+            soma+=tabela[i][5];
+            }
+    }
+    return soma/(1/tam);
+}
+float calculoVariancia(tabela[][6],int k,int tam,float media){
+    float variancia=0;
+    for(int i = 0;i<k;i++){
+            variancia += (pow(tabela[i][0],2)*tabela[i][1])-(tam*pow(media,2));
+    }
+    return variancia*(1/tam-1);
+}
