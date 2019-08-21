@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1566382336 source:c:\users\alucard\documents\projeto-estatistico\projestatistico\main.cpp
+1566393218 source:c:\users\alucard\documents\projeto-estatistico\projestatistico\main.cpp
 	<iostream>
 	<math.h>
 	<stdlib.h>
 	<iomanip>
 	"func.h"
 
-1566382336 c:\users\alucard\documents\projeto-estatistico\projestatistico\func.h
+1566394073 c:\users\alucard\documents\projeto-estatistico\projestatistico\func.h
 	<iostream>
 	<math.h>
 
