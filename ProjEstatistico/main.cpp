@@ -17,17 +17,18 @@ using namespace std;
 *
 */
 
-int main(void){
+int main(void)
+{
     int A,k,h,small,biger;
-    float media,variancia;
-    //float intervalos[]
+    float mediaa=0,varianciaa=0;
     int tam;
     cout <<"Quantos dados deseja registrar?"<<endl;
     cin  >> tam;
     system("cls");
 
     int dados[tam];
-    for(int i=0;i<tam;i++){
+    for(int i=0; i<tam; i++)
+    {
         cout << i+1 << " Digite o valor e pressione \"ENTER\"!"<<endl;
         cin>>dados[i];
         cout <<endl;
@@ -54,20 +55,22 @@ int main(void){
     calculoFrequenciaClasseRelativa(tabela,k,tam);
     calculoFrequenciaClasseRelativaAcumulada(tabela,k);
     calculoMediaClasse(tabela,k);
-    media = calculoMediaClasseAcumulada(tabela,k,tam);
-    variancia = calculoVariancia(tabela,k,tam,media);
+    mediaa = calculoMediaClasseAcumulada(tabela,k,tam);
+    varianciaa = calculoVariancia(tabela,k,tam,mediaa);
 
     cout <<"LEGENDA:\n" <<"P.M = Ponto Medio\n"<<"F.C=Frequencia Absoluta Da Classe\n"<<"F.C.A=Frequencia Absoluta Acumulada Da Classe\n"
-         <<"F.C.R=Frequencia Relativa Da Classe\n"<<"F.C.R.A=Frequencia Relativa Acumulada Da Classe\n"<<endl;
+         <<"F.C.R=Frequencia Relativa Da Classe\n"<<"F.C.R.A=Frequencia Relativa Acumulada Da Classe\n"<<"M.C = Media De Cada Classe\n"<<endl;
 
     cout <<setiosflags(ios::internal);
     cout <<"     INTERVALO"<< setw(5)<<"||"<<setw(9) <<"P.M" <<"||" <<setw(9) <<"F.C" <<"||" <<setw(9)
-         <<"F.C.A" <<"||" <<setw(9) <<"F.C.R"<<"||" <<setw(9) <<"F.C.R.A" <<"||"<<endl;
+         <<"F.C.A" <<"||" <<setw(9) <<"F.C.R"<<"||" <<setw(9) <<"F.C.R.A" <<"||"<<setw(9)<<"M.C"<<endl;
 
     cout << "-----------------------------------------------------------------------------------------------------------------------"<<endl;
-    for(int i = 0;i<k;i++){
-            cout <<setw(7)<<intervalos[i][0]<< " " <<setw(7)<< intervalos[i][1]<<" ";
-        for(int j =0;j<6;j++){
+    for(int i = 0; i<k; i++)
+    {
+        cout <<setw(7)<<intervalos[i][0]<< " " <<setw(7)<< intervalos[i][1]<<" ";
+        for(int j =0; j<6; j++)
+        {
             cout << " || " <<setw(7)<<tabela[i][j];
 
         }
@@ -75,9 +78,9 @@ int main(void){
         cout << "-----------------------------------------------------------------------------------------------------------------------"<<endl;
     }
 
-    cout <<"\n Media:"<<media<<endl;
-    cout <<"\n Variancia:"<<variancia<<endl;
-    cout <<"\n Desvio Padrao"<<sqrt(variancia)<<endl;
+    cout <<"\nMedia: "<<mediaa<<endl;
+    cout <<"\nVariancia: "<<varianciaa<<endl;
+    cout <<"\nDesvio Padrao: "<<setprecision(3)<<sqrt(varianciaa)<<" Aproximadamente.\n"<<endl;
 
     system("pause");
 
