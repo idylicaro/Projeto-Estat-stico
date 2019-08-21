@@ -10,14 +10,17 @@
 	<iostream>
 	<math.h>
 
-1566398590 source:c:\users\allucard.se\documents\projeto-estatistico\projestatistico\main.cpp
+1566405205 source:c:\users\allucard.se\documents\projeto-estatistico\projestatistico\main.cpp
 	<iostream>
 	<math.h>
 	<stdlib.h>
 	<iomanip>
+	<fstream>
 	"func.h"
 
-1566402741 c:\users\allucard.se\documents\projeto-estatistico\projestatistico\func.h
+1566405123 c:\users\allucard.se\documents\projeto-estatistico\projestatistico\func.h
 	<iostream>
 	<math.h>
+	<fstream>
+	<string.h>
 

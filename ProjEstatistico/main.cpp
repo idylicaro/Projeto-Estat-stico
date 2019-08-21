@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 
 #include "func.h"
@@ -19,20 +20,30 @@ using namespace std;
 
 int main(void)
 {
+    short int menuOpc=0;
     int A,k,h,small,biger;
     float mediaa=0,varianciaa=0;
     int tam;
     cout <<"Quantos dados deseja registrar?"<<endl;
     cin  >> tam;
+    int dados[tam];
     system("cls");
 
-    int dados[tam];
-    for(int i=0; i<tam; i++)
+    cout << "Digite(1) para Ler um arquivo.txt ou Digite(2) para Digitar os dados"<<endl;
+    cin  >>menuOpc;
+
+    if(menuOpc==1){
+        lerArquivo(dados,tam);
+    }else if(menuOpc==2){
+        for(int i=0; i<tam; i++)
     {
         cout << i+1 << " Digite o valor e pressione \"ENTER\"!"<<endl;
         cin>>dados[i];
         cout <<endl;
     }
+    }
+    system("cls");
+
     small = menor(dados,tam);
     biger = maior(dados,tam);
 

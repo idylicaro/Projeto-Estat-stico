@@ -1,5 +1,7 @@
 #include <iostream>
 #include <math.h>
+#include <fstream>
+#include <string.h>
 using namespace std;
 
 float KclassesCalculo(int n)
@@ -172,4 +174,24 @@ float calculoVariancia(float tabela[][6],int k,int tam,float media)
     }
     variancia = (aux1-aux2)/(tam-1);
     return variancia;
+}
+void selecioArchive(char nameArquivo[20]){  //quando for chamar essa funçao o parametro tem q ser zerado
+    char nameAux[15];
+    cout << "Nome do Arquivo.txt a Selecionar:"<<endl;
+    cin >> nameAux;
+    strcat(nameAux,".txt");
+    strcat(nameArquivo,nameAux);
+}
+void lerArquivo(int vet[],int tam){
+    char nameArchive[20] = "";
+    selecioArchive(nameArchive);
+    fstream archive;
+    archive.open(nameArchive,ios::in);
+
+    if(archive.fail())
+        cout <<"Arquivo NAO foi encontrado!Feche e verifique os arquivos"<<endl;
+
+    for(int i=0;i<tam;i++){
+        archive >> vet[i];
+    }
 }
